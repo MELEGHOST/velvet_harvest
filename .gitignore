@@ -2,54 +2,44 @@
 # Godot-specific ignores
 *.import
 *.remap
-.project
-.editor
+export_presets.cfg
 .autoloads/
-.exported/
-.instanced_scenes/
-.scenes/
-.singletons/
+.editor/
+
 # Build artifacts
 *.exe
 *.dll
 *.so
 *.dylib
-*.pdb
-*.obj
-*.o
-# Temp files
+*.bin
+*.apk
+*.aab
+*.app
+*.dmg
+*.msi
+
+# Dependencies
+*.import
+*.remap
+
+# Temporary files
 *.tmp
 *.temp
 *.log
-# Editor/IDE
-.vscode/
-.idea/
-*.swp
 *~
-# System files
-.DS_Store
-Thumbs.db
+
 # Environment
 .env
 .env.local
 *.env.*
-# Coverage and testing
-.coverage
-coverage/
-htmlcov/
-.pytest_cache/
-.mypy_cache/
-# Distribution artifacts
-dist/
-build/
-target/
-# Virtual environments
-venv/
-.venv/
-__pycache__/
-*.pyc
-# Node packages
-node_modules/
-# Gradle
-.gradle/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
 ```
