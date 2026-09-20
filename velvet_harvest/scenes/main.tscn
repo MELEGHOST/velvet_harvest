@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://main_scene"]
+[gd_scene load_steps=3 format=3 uid="uid://main_scene"]
 
 [ext_resource type="Script" path="res://scripts/globals/game_state.gd" id="1_gamestate"]
 [ext_resource type="Script" path="res://scripts/globals/time_system.gd" id="2_timesystem"]
@@ -103,3 +103,23 @@ color = Color(0.2, 0.5, 0.8, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vasily"]
 shape = SubResource("RectangleShape2D_world")
+
+[node name="CropPlotExample" type="Node2D" parent="World"]
+transform = Transform2D(0, Vector2(200, -100))
+
+[node name="Soil" type="ColorRect" parent="CropPlotExample"]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.4, 0.25, 0.1, 1)
+
+[node name="BuildingSite" type="Node2D" parent="World"]
+transform = Transform2D(0, Vector2(-200, -200))
+
+[node name="Foundation" type="ColorRect" parent="BuildingSite"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+color = Color(0.5, 0.4, 0.3, 1)
