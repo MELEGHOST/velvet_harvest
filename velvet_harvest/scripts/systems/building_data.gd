@@ -42,41 +42,41 @@ var stages: Array[String] = ["foundation", "walls", "roof", "finished"]
 @export var construction_time: float = 2.0
 
 func can_build() -> bool:
-	# Проверка наличия требуемых зданий
-	for required in required_buildings:
-		if not GameState.has_building(required):
-			return false
-	
-	# Проверка ресурсов
-	if GameState.melons < melon_cost:
-		return false
-	if GameState.inventory.get("wood", 0) < wood_cost:
-		return false
-	if GameState.inventory.get("stone", 0) < stone_cost:
-		return false
-	if GameState.inventory.get("metal", 0) < metal_cost:
-		return false
-	
-	return true
+    # Проверка наличия требуемых зданий
+    for required in required_buildings:
+        if not GameState.has_building(required):
+            return false
+    
+    # Проверка ресурсов
+    if GameState.melons < melon_cost:
+        return false
+    if GameState.inventory.get("wood", 0) < wood_cost:
+        return false
+    if GameState.inventory.get("stone", 0) < stone_cost:
+        return false
+    if GameState.inventory.get("metal", 0) < metal_cost:
+        return false
+    
+    return true
 
 func get_construction_cost() -> Dictionary:
-	return {
-		"wood": wood_cost,
-		"stone": stone_cost,
-		"metal": metal_cost,
-		"melons": melon_cost
-	}
+    return {
+        "wood": wood_cost,
+        "stone": stone_cost,
+        "metal": metal_cost,
+        "melons": melon_cost
+    }
 
 func pay_cost() -> bool:
-	if not can_build():
-		return false
-	
-	GameState.spend_melons(melon_cost)
-	if wood_cost > 0:
-		GameState.remove_from_inventory("wood", wood_cost)
-	if stone_cost > 0:
-		GameState.remove_from_inventory("stone", stone_cost)
-	if metal_cost > 0:
-		GameState.remove_from_inventory("metal", metal_cost)
-	
-	return true
+    if not can_build():
+        return false
+    
+    GameState.spend_melons(melon_cost)
+    if wood_cost > 0:
+        GameState.remove_from_inventory("wood", wood_cost)
+    if stone_cost > 0:
+        GameState.remove_from_inventory("stone", stone_cost)
+    if metal_cost > 0:
+        GameState.remove_from_inventory("metal", metal_cost)
+    
+    return true

@@ -28,14 +28,14 @@ extends Resource
 @export var water_requirement: float = 0.5  # 0.0-1.0
 
 func get_sell_price(modifier: float = 1.0) -> int:
-	return int(base_price * modifier * (rarity * 0.1))
+    return int(base_price * modifier * (rarity * 0.1))
 
 func can_grow_in_season(season: String) -> bool:
-	match crop_type:
-		"vegetable":
-			return season in ["spring", "summer"]
-		"berry":
-			return season in ["summer", "autumn"]
-		"flower":
-			return season in ["spring", "summer"]
-	return true
+    match crop_type:
+        "vegetable":
+            return season in ["spring", "summer"]
+        "berry":
+            return season in ["summer", "autumn"]
+        "flower":
+            return season in ["spring", "summer"]
+    return true

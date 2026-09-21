@@ -1,36 +1,21 @@
 ```
 # Godot-specific ignores
 *.import
-*.uid
-export_presets.cfg
-.rid
-.scp
+*.remap
+.project
+.editor
+.autoload_singleton.gd
+.godot/
 
 # Build artifacts
-*.exe
-*.dll
-*.so
-*.dylib
-*.pdb
+export_presets.cfg
 
-# Temp files
-*.tmp
-*.temp
+# Dependencies
+addons/
+*.scn
+*.tres
+*.res
+
+# Logs
 *.log
-
-# Editor/IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS specific
-.DS_Store
-Thumbs.db
-
-# Dependencies (if any)
-node_modules/
-venv/
-.venv/
-__pycache__/
 ```
