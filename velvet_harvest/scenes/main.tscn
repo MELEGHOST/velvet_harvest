@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://main_scene"]
+[gd_scene load_steps=9 format=3 uid="uid://main_scene"]
 
 [ext_resource type="Script" path="res://scripts/globals/game_state.gd" id="1_gamestate"]
 [ext_resource type="Script" path="res://scripts/globals/time_system.gd" id="2_timesystem"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://scripts/ui/ui_manager.gd" id="4_ui"]
 [ext_resource type="Script" path="res://scripts/systems/stealth_system.gd" id="5_stealth"]
 [ext_resource type="Script" path="res://scripts/npcs/vasily.gd" id="6_vasily"]
-[ext_resource type="Texture2D" path="res://assets/sprites/tile_grass.png" id="7_grass"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(40, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_world"]
 size = Vector2(2000, 1500)
@@ -45,15 +47,13 @@ groups = ["player"]
 transform = Transform2D(0, Vector2(0, -200))
 script = ExtResource("3_player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_world")
+[node name="Sprite" type="Sprite2D" parent="Player"]
+scale = Vector2(2, 2)
 
-[node name="Sprite" type="ColorRect" parent="Player"]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(0.8, 0.2, 0.2, 1)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_player")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
@@ -103,7 +103,7 @@ offset_bottom = 20.0
 color = Color(0.2, 0.5, 0.8, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vasily"]
-shape = SubResource("RectangleShape2D_world")
+shape = SubResource("RectangleShape2D_player")
 
 [node name="CropPlotExample" type="Node2D" parent="World"]
 transform = Transform2D(0, Vector2(200, -100))
