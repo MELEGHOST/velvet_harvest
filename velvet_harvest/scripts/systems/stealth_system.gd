@@ -10,7 +10,6 @@ var active_intruders: Array[Node2D] = []
 var player_stealth_level: float = 0.0
 
 signal intruder_spotted(intruder: Node2D)
-signal player_detected(detection_level: float)
 signal night_started()
 signal night_ended()
 
