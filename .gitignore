@@ -1,32 +1,36 @@
 ```
 # Godot-specific ignores
 *.import
-*.remap
+*.uid
 export_presets.cfg
-.user
-.autosave
+.rid
+.scp
 
-# Dependencies
-res://addons/
-# Note: Godot projects typically don't have standard dependency dirs like node_modules, venv, etc.
-# If using external tools, those would need specific entries
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
 
-# Editor/IDE files
+# Temp files
+*.tmp
+*.temp
+*.log
+
+# Editor/IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
 
-# System files
+# OS specific
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-
-# Build artifacts (if any)
-dist/
-build/
-target/
+# Dependencies (if any)
+node_modules/
+venv/
+.venv/
+__pycache__/
 ```
