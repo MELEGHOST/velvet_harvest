@@ -1,0 +1,22 @@
+```
+# Godot-specific ignores
+*.import
+*.uid
+.project
+*.scn
+*.tres
+*.res
+
+# Dependencies
+.addons/
+.import/
+bin/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+```
